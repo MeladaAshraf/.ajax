@@ -1,0 +1,237 @@
+:root {
+    --bg-color: #f0f7f4;
+    --text-color: #1f2223;
+    --container-bg-color: #faf9f3;
+    --post-bg-color: #ceccc3;
+    --post-hover-bg-color: #b0afa6;
+}
+
+.dark-theme {
+    --bg-color: #1e1e1e;
+    --text-color: #c9c9c9;
+    --container-bg-color: #3d3d3d;
+    --post-bg-color: #6f6f6f;
+    --post-hover-bg-color: #555555;
+}
+
+body {
+    font-family: 'Aril', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    background-color: var(--container-bg-color);
+    padding: 10px 20px;
+    color: var(--text-color)
+}
+
+.posts-list, .important-posts-list {
+    margin-top: 0.5em;
+    padding: 1em 3em;
+    text-align: left;
+    column-count: 2;
+}
+
+#main-title {
+    font-size: 3em;
+    margin: 0 0 0.2em 0;
+}
+
+.post-title {
+    display: flex;
+    margin-right: auto;
+    margin-left: 2em;
+    margin-bottom: 0;
+}
+
+#openCreatePostModal {
+    padding: 0.5em 1em;
+    display: flex;
+    background-color: #d9d9d9;
+    color: #000000;
+    font-size: 1.2em;
+    border: 2px solid;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: auto 1em 1em 2.5em;
+}
+
+#toggleThemeBtn {
+    background-color: #d9d9d9;
+    color: #000000;
+    border: 2px solid;
+    display: flex;
+    margin: 1em 3em -2em auto;
+    padding: 0.5em 1em;
+}
+
+button {
+    border: 0;
+    font-size: 16px;
+}
+
+button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.post {
+    background-color: var(--post-bg-color);
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    break-inside: avoid;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.post:hover {
+    background-color: var(--post-hover-bg-color);
+}
+
+.loader {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+
+.add-important-btn, .remove-important-btn {
+    padding: 10px 20px;
+}
+
+.add-important-btn {
+    background-color: #d9d9d9;
+    color: #000000;
+    border: 2px solid;
+    margin-bottom: 10px;
+}
+
+.remove-important-btn {
+    background-color: #626262;
+    color: #d9d9d9;
+    border: 2px solid;
+    margin-bottom: 10px;
+}
+
+.delete-btn {
+    padding: 10px 30px;
+    background-color: #d9d9d9;
+    color: #000000;
+    border: 2px solid;
+    margin-bottom: 10px;
+}
+
+.btns-box {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+}
+
+.close {
+    position: absolute;
+    top: 8px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 40px;
+    color: #888;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content textarea,
+.modal-content select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    width: calc(100% - 2em);
+    background-color: var(--post-bg-color);
+    color: var(--text-color);
+    font-size: 16px;
+}
+
+#savePostBtn {
+    padding: 10px 15px;
+    background-color: #d9d9d9;
+    color: #000000;
+    border: 2px solid;
+}
+
+#confirmDeleteBtn,
+#cancelDeleteBtn {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #fff;
+}
+
+#confirmDeleteBtn {
+    background-color: #dcdcdc;
+    margin-right: 0.5em;
+    color: #000000;
+}
+
+#cancelDeleteBtn {
+    background-color: #6c757d;
+}

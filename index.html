@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Приложение с постами</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 id="main-title">Приложение с постами</h1>
+      <button id="toggleThemeBtn"><b>Сменить тему</b></button>
+      <button id="openCreatePostModal"><b>Создать пост</b></button>
+
+      <h2 class="post-title">Важные посты:</h2>
+      <div class="important-posts-list"></div>
+
+      <h2 class="post-title">Обычные посты:</h2>
+      <div class="posts-list"></div>
+
+      <div id="loader" class="loader"></div>
+    </div>
+
+    <div id="postModal" class="modal">
+      <div class="modal-content">
+        <span id="closePostModal" class="close">&times;</span>
+        <h2>Создать пост</h2>
+        <form id="postForm">
+          <label for="userNameSelect">Пользователь:</label>
+          <select id="userNameSelect"></select
+          ><br /><br />
+          <label for="postTitle">Заголовок:</label>
+          <input
+            type="text"
+            id="postTitle"
+            name="postTitle"
+            required
+          /><br /><br />
+
+          <label for="postContent">Содержание:</label>
+          <textarea
+            id="postContent"
+            name="postContent"
+            rows="4"
+            required
+          ></textarea
+          ><br /><br />
+
+          <button id="savePostBtn">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="confirmModal" class="modal">
+      <div class="modal-content">
+        <span id="closeConfirmModal" class="close">&times;</span>
+        <h2>Подтвердите удаление</h2>
+        <p>Вы уверены, что хотите удалить этот пост?</p>
+        <div class="confirm-buttons">
+          <button id="confirmDeleteBtn">Да, удалить</button>
+          <button id="cancelDeleteBtn">Отмена</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
